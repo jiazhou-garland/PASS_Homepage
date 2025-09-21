@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>PAST-SSM</title>
     <meta name="author" content="Jiazhou Zhou">
-    <meta name="description" content="Project page of PAST-SSM">
+    <meta name="description" content="Project page of PASS">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="eccv_logo.png">
     <!-- Format -->
@@ -65,8 +65,10 @@
                         <a href="https://addisonwang2013.github.io/vlislab/linwang.html">  
                             Addison Lin Wang  
                         </a>  
-                        <br /> AI & CMA Thrust, HKUST(GZ)   
-                        <br/> Dept. of CSE, HKUST   
+                        <br/> School of Electrical and Electronie Engineering,
+                        <br/> Nanyang Technological Universily  
+
+                        
                     </li>  
                 </ul>  
             </div>  
@@ -93,18 +95,18 @@
 
 			    
                         <li>
-                            <a href="https://github.com/jiazhou-garland/PAST-SSM">
+                            <a href="https://github.com/jiazhou-garland/PASS">
                             <img src="./images/github_icon.jpg" height="100px"><br>
                                 <h4><strong>Code</strong></h4>
                             </a>
                         </li>
 
-                        <!-- <li>
+                        <li>
                             
-                            <img src="./images/colab_icon.jpg" height="100px"><br>
-                                <h4><strong>Colab</strong></h4>
+                            <img src="./images/huggingface.jpg" height="100px"><br>
+                                <h4><strong>Huggingface</strong></h4>
                             </a>
-                        </li> -->
+                        </li>
  
 
                         <!-- <li>
@@ -112,16 +114,27 @@
                             <img src="./images/slide_icon.jpg" height="100px"><br>
                                 <h4><strong>Supp</strong></h4>
                             </a>
-                        </li>  -->                   
-                        <li>
+                        </li>  -->       
+
+                        <!-- <li>
                             <a href="https://vlislab22.github.io/vlislab/">
                             <img src="./images/lab_logo.png" height="100px"><br>
                                 <h4><strong>Vlislab</strong></h4>
                             </a>
-                        </li>                       
+                        </li>                        -->
                       
                     </ul>
                 </div>
+        </div>
+
+        <div class="row">     
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Compared to previous event-based recognition methods limited to a narrow distribution of event length and poor temporal frequency generalization, 
+                    our method, PASS, advances spatial-temporal event modeling across a broader distribution of event length ranging from 1 to 10^9 and demonstrates superior temporal frequency generalization.
+                </h3>
+                <img src="./images/cTesearFig.pdf" class="img-responsive" alt="vis_res"  class="center" >
+              </div>
         </div>
 
 
@@ -132,18 +145,11 @@
                     Abstract
                 </h3>
                 <p class="text-justify">
-Event cameras are bio-inspired sensors that capture the intensity changes asynchronously and output event streams with distinct advantages, such as high temporal resolution. 
-To exploit event cameras for object/action recognition, existing methods predominantly sample and aggregate events in a second-level duration at every fixed temporal interval (or frequency).
-However, they often face difficulties in capturing the spatiotemporal relationships for longer, e.g., minute-level, events and generalizing across varying temporal frequencies. 
-To fill the gap, we present a novel framework, dubbed PAST-SSM, exhibiting superior capacity in recognizing events of arbitrary duration e.g., 0.1s to 4.5min, and generalizing to varying inference frequencies.
-Our key insight is to learn the spatiotemporal relationships from the encoded event features via the state space model (SSM) -- whose linear complexity makes it ideal for modeling high temporal resolution events with longer sequences. 
-To achieve this goal, we first propose a Path-Adaptive Event Aggregation and Scan (PEAS) module to encode events of varying duration into features with fixed dimensions by adaptively scanning and selecting aggregated event frames. 
-On top of PEAS, we introduce a novel Multi-faceted Selection Guiding (MSG) loss to minimize the randomness and redundancy of the encoded features. This subtly enhances the model generalization across different inference frequencies. 
-Lastly, the SSM is employed to better learn the spatiotemporal properties from the encoded features. 
-Moreover, we build a minute-level event-based recognition dataset, named ArDVS100, with arbitrary duration for the benefit of the community. 
-Extensive experiments prove that our method outperforms prior arts by +3.45%, +0.38% and +8.31% on the DVS Action, SeAct, and HARDVS datasets, respectively. 
-In addition, it achieves an accuracy of 97.35%, 89.00%, and 100.00% in our ArDVS100, TemArDVS100, and Real-ArDVS10 datasets respectively with the duration from 1s to 265s. 
-Our method also shows strong generalization with a maximum accuracy drop of only 8.62% for varying inference frequencies while the baseline drop reaches 27.59%.
+                    Event cameras are bio-inspired sensors that capture intensity changes asynchronously with distinct advantages, such as high temporal resolution. Existing methods for event-based object/action recognition predominantly sample and convert event representation at every fixed temporal interval (or frequency). However, they are constrained to processing a limited number of event lengths and show poor frequency generalization, thus not fully leveraging the event's high temporal resolution. In this paper, we 
+                    present our PASS framework, exhibiting superior capacity for spatiotemporal event modeling towards a larger number of event lengths and generalization across varying inference temporal frequencies.
+                    Our key insight is to learn adaptively encoded event features via the state space models (SSMs), whose linear complexity and generalization on input frequency make them ideal for processing high temporal resolution events. 
+                    Specifically, we propose a Path-selective Event Aggregation and Scan (PEAS) module to encode events into features with fixed dimensions by adaptively scanning and selecting aggregated event presentation. On top of it, we introduce a novel Multi-faceted Selection Guiding (MSG) loss to minimize the randomness and redundancy of the encoded features during the PEAS selection process. Our method outperforms prior methods on five public datasets and shows strong generalization across varying inference frequencies with less accuracy drop ( ours -8.62% v.s. -20.69% for the baseline). 
+                    Moreover, our model exhibits strong long spatiotemporal modeling for a broader distribution of event length (1-$10^9$), precise temporal perception, and effective generalization for real-world scenarios.
                 </p>
             </div>
         </div>
@@ -157,7 +163,7 @@ Our method also shows strong generalization with a maximum accuracy drop of only
             <h3>
                 Overall framework of our PAST-SSM
             </h3>
-            <img src="./images/framework.png" class="img-responsive" alt="vis_res"  class="center" >
+            <img src="./images/cFramework.pdf" class="img-responsive" alt="vis_res"  class="center" >
       	</div>
     </div>
 <!-- ####      <div class="col-md-8 col-md-offset-2">
