@@ -1,1 +1,1 @@
-[**Project page**](https://github.com/jiazhou-garland/PASS_Homepage)
+[**Project page**](https://jiazhou-garland.github.io/PASS_Homepage/)
